@@ -53,7 +53,6 @@ function SkillNode({ skill, position, index }: { skill: Skill; position: [number
           color={color}
           anchorX="center"
           anchorY="middle"
-          font="/fonts/Geist-Bold.ttf"
         >
           {skill.name}
         </Text>
@@ -63,7 +62,6 @@ function SkillNode({ skill, position, index }: { skill: Skill; position: [number
           color="#ffffff"
           anchorX="center"
           anchorY="middle"
-          font="/fonts/Geist-Regular.ttf"
         >
           {skill.level}%
         </Text>

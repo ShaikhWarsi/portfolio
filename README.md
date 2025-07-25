@@ -5,7 +5,6 @@
 💡 Passionate about:  
 - 🧠 AI and automation  
 - 📈 Stock & crypto trading  
-- 🎬 YouTube documentaries  
 - 📱 Coding apps that solve real problems
 
 ---
@@ -21,7 +20,7 @@
 ## 📚 Currently Learning:
 - Advanced Python & full-stack dev
 - Machine learning for pattern detection in trading
-- How to grow multiple YouTube channels from scratch
+- AI integration in all real world use cases
 
 ---
 

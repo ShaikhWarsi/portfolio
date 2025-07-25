@@ -100,7 +100,7 @@ export default function Portfolio() {
   return (
     <>
       <div className={`min-h-screen ${isDarkMode ? "bg-black" : "bg-gray-900"} text-white overflow-x-hidden`}>
-        {/* <ParticleBackground /> */}
+        <ParticleBackground />
 
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 z-50 p-6">
@@ -198,7 +198,7 @@ export default function Portfolio() {
             >
               <h1 className="text-6xl md:text-8xl font-bold mb-4">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  YAMIN
+                  SHAIKH
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
@@ -208,7 +208,7 @@ export default function Portfolio() {
               <p
                 className="text-xl md:text-2xl text-gray-300 mb-8"
               >
-                Back End DEV • AI Specialist • Crpyto Analayst
+                Back End DEV • AI Specialist • Crypto Analyst
               </p>
             </div>
 
@@ -272,6 +272,7 @@ export default function Portfolio() {
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div
                         className="bg-gradient-to-r from-cyan-500 to-blue-600 h-2 rounded-full"
+                        style={{ width: `${skill.level}%` }}
                       />
                     </div>
                   </div>

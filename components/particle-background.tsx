@@ -31,7 +31,7 @@ export default function ParticleBackground() {
 
     const createParticles = () => {
       const particles: Particle[] = []
-      const particleCount = Math.floor((canvas.width * canvas.height) / 10000) // Increased particle count for denser field
+      const particleCount = Math.floor((canvas.width * canvas.height) / 20000) // Reduced particle count for better performance
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
@@ -55,6 +55,8 @@ export default function ParticleBackground() {
 
       ctx.globalCompositeOperation = "lighter"; // Blend particles for a glowing effect
 
+      const time = Date.now() * 0.002; // Calculate time once per frame
+
       particlesRef.current.forEach((particle, index) => {
         // Update position
         particle.x += particle.vx
@@ -68,12 +70,12 @@ export default function ParticleBackground() {
 
         // Draw particle
         ctx.save()
-        ctx.globalAlpha = particle.opacity * (0.8 + 0.2 * Math.sin(Date.now() * 0.002 + index))
+        ctx.globalAlpha = particle.opacity * (0.8 + 0.2 * Math.sin(time + index))
         ctx.fillStyle = particle.color
-        ctx.shadowBlur = 15 // Increased shadow blur for a softer glow
+        ctx.shadowBlur = 10 // Slightly reduced shadow blur for performance
         ctx.shadowColor = particle.color
         ctx.beginPath()
-        ctx.arc(particle.x, particle.y, particle.size * (0.8 + 0.2 * Math.sin(Date.now() * 0.002 + index)), 0, Math.PI * 2)
+        ctx.arc(particle.x, particle.y, particle.size * (0.8 + 0.2 * Math.sin(time + index)), 0, Math.PI * 2)
         ctx.fill()
         ctx.restore()
 
@@ -83,7 +85,7 @@ export default function ParticleBackground() {
           const dy = particle.y - otherParticle.y
           const distance = Math.sqrt(dx * dx + dy * dy)
 
-          if (distance < 100) {
+          if (distance < 60) { // Further reduced connection distance for better performance
             ctx.save()
             ctx.globalAlpha = ((100 - distance) / 100) * 0.1 // Reduced opacity for connections to make them more subtle
             ctx.strokeStyle = particle.color

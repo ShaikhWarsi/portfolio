@@ -57,11 +57,23 @@ export default function Portfolio() {
   const [mounted, setMounted] = useState(false)
   const [terminalOpen, setTerminalOpen] = useState(false)
   const [terminalInput, setTerminalInput] = useState("")
+  const [showLogo, setShowLogo] = useState(true)
   const [terminalHistory, setTerminalHistory] = useState<string[]>([
     "> System initialized...",
     "> Welcome to the AI interface",
     '> Type "help" for available commands',
   ])
+  
+  // Track scroll position to hide logo when scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide logo when scrolled down more than 100px
+      setShowLogo(window.scrollY < 100)
+    }
+    
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
@@ -111,13 +123,17 @@ export default function Portfolio() {
       <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         <ParticleBackground />
 
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 p-6">
+        {/* Logo - Fixed at top left, hidden on scroll */}
+        <div className={`fixed top-0 left-0 z-50 p-6 pointer-events-none transition-opacity duration-300 ${showLogo ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent pointer-events-auto">
+            AI DEV
+          </div>
+        </div>
         
+        {/* Navigation */}
+        <nav className="fixed top-0 left-0 right-0 z-40 p-6">
           <div className="flex justify-between items-center max-w-7xl mx-auto">
-            <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              AI DEV
-            </div>
+            <div className="invisible text-2xl font-bold">AI DEV</div>
 
             <div className="flex items-center gap-6">
               <div className="hidden md:flex gap-6">

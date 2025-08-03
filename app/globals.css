@@ -7,6 +7,30 @@
 
 @layer base {
   :root {
+    /* Light mode - more eye-friendly */
+    --background: 0 0% 96%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 92%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 92%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 180 70% 40%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 88%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 88%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 300 70% 40%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 180 30% 40%;
+    --input: 0 0% 88%;
+    --ring: 180 70% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --card: 0 0% 5%;
@@ -46,7 +70,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 ::-webkit-scrollbar-thumb {

@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Linkedin, Mail, Instagram, Terminal, Volume2, VolumeX, Sun, Moon } from "lucide-react"
+import { Github, Linkedin, Mail, Instagram, Terminal, Sun, Moon } from "lucide-react"
 import ParticleBackground from "@/components/particle-background"
 import SkillsSphere from "@/components/skills-sphere"
 import HologramCard from "@/components/hologram-card"
@@ -52,15 +53,20 @@ const skills = [
 
 export default function Portfolio() {
   const activeSection = useScrollSpy(["home", "projects", "skills", "about", "contact"], 200)
-  const [isDarkMode, setIsDarkMode] = useState(true)
-  const [audioEnabled, setAudioEnabled] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   const [terminalOpen, setTerminalOpen] = useState(false)
   const [terminalInput, setTerminalInput] = useState("")
   const [terminalHistory, setTerminalHistory] = useState<string[]>([
     "> System initialized...",
-    "> Welcome to the neural interface",
+    "> Welcome to the AI interface",
     '> Type "help" for available commands',
   ])
+  
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleTerminalCommand = (command: string) => {
     const newHistory = [...terminalHistory, `> ${command}`]
@@ -97,9 +103,12 @@ export default function Portfolio() {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
   }
 
+  // Don't render anything until mounted to prevent hydration mismatch
+  if (!mounted) return null
+
   return (
     <>
-      <div className={`min-h-screen ${isDarkMode ? "bg-black" : "bg-gray-900"} text-white overflow-x-hidden`}>
+      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         <ParticleBackground />
 
         {/* Navigation */}
@@ -107,7 +116,7 @@ export default function Portfolio() {
         
           <div className="flex justify-between items-center max-w-7xl mx-auto">
             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              NEURAL.DEV
+              AI DEV
             </div>
 
             <div className="flex items-center gap-6">
@@ -131,19 +140,10 @@ export default function Portfolio() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => setAudioEnabled(!audioEnabled)}
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                   className="border border-cyan-500/30 hover:bg-cyan-500/10"
                 >
-                  {audioEnabled ? <Volume2 className="h-4 w-4" /> : <VolumeX className="h-4 w-4" />}
-                </Button>
-
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsDarkMode(!isDarkMode)}
-                  className="border border-cyan-500/30 hover:bg-cyan-500/10"
-                >
-                  {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                  {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                 </Button>
 
                 <Button
@@ -251,7 +251,7 @@ export default function Portfolio() {
         <section id="skills" className="py-20 px-6">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-purple-400 relative z-10">
-              NEURAL CAPABILITIES
+              AI CAPABILITIES
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -332,15 +332,11 @@ export default function Portfolio() {
               ESTABLISH CONNECTION
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div className="space-y-6">
-
-              </div>
-
-              <div className="space-y-6">
+            <div className="flex flex-col items-center w-full">
+              <div className="space-y-6 w-full max-w-md mx-auto">
                 <h3 className="text-2xl font-bold text-purple-400 mb-6 relative z-10"></h3>
 
-                <div className="flex justify-center space-x-4">
+                <div className="flex justify-center space-x-4 w-full mx-auto">
                   {[{"icon":Github,"label":"GitHub","href":"https://github.com/Shaikh-Warsi"},
                     {"icon":Linkedin,"label":"LinkedIn","href":"https://www.linkedin.com/in/shaikh-mohammad-warsi-141532271/"},
                     {"icon":Mail,"label":"Email","href":"mailto:yollotemp@gmail.com"},
@@ -360,7 +356,7 @@ export default function Portfolio() {
                 <div className="mt-8 p-6 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg border border-orange-500/20">
                   <h4 className="text-lg font-bold text-orange-400 mb-2 relative z-10">Status: Online</h4>
                   <p className="text-gray-300 text-sm">
-                    Neural interface active. Ready to collaborate on your next project.
+                    AI interface active. Ready to collaborate on your next project.
                   </p>
                 </div>
               </div>

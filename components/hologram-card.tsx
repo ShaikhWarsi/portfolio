@@ -41,7 +41,7 @@ export default function HologramCard({ project, index }: HologramCardProps) {
         whileHover="hover"
         transition={{ duration: 0.2 }}
       >
-        <Card className="relative overflow-hidden bg-black/40 border-cyan-500/30 backdrop-blur-sm h-full">
+        <Card className="relative overflow-hidden bg-black/40 dark:bg-black/40 bg-white/60 border-cyan-500/30 backdrop-blur-sm h-full">
         <motion.div
           className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
         />
@@ -70,7 +70,7 @@ export default function HologramCard({ project, index }: HologramCardProps) {
               </motion.div>
             </div>
 
-            <p className="text-gray-300 text-sm mb-4 leading-relaxed">{project.description}</p>
+            <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 leading-relaxed">{project.description}</p>
 
             <div className="flex items-center justify-between">
               <span className="text-xs text-cyan-400 bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/30">

@@ -2,7 +2,8 @@
 
 import { Canvas, useFrame } from "@react-three/fiber"
 import { Text, OrbitControls } from "@react-three/drei"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
+import { useTheme } from "next-themes"
 import type * as THREE from "three"
 
 interface Skill {
@@ -15,7 +16,7 @@ interface SkillsSphereProps {
   skills: Skill[]
 }
 
-function SkillNode({ skill, position, index }: { skill: Skill; position: [number, number, number]; index: number }) {
+function SkillNode({ skill, position, index, isDarkTheme }: { skill: Skill; position: [number, number, number]; index: number; isDarkTheme: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null)
   const textRef = useRef<THREE.Group>(null)
 
@@ -29,22 +30,37 @@ function SkillNode({ skill, position, index }: { skill: Skill; position: [number
     }
   })
 
-  const color =
-    skill.category === "Programming"
-      ? "#00ffff"
-      : skill.category === "Finance"
-        ? "#ff00ff"
-        : skill.category === "Scripting"
-          ? "#00ff00"
-          : skill.category === "Technology"
-            ? "#ffff00"
-            : "#ff8800"
+  // Define colors based on theme
+  const darkThemeColors = {
+    Programming: "#00ffff",
+    Finance: "#ff00ff",
+    Scripting: "#00ff00",
+    Technology: "#ffff00",
+    default: "#ff8800"
+  }
+  
+  const lightThemeColors = {
+    Programming: "#6699cc", // Softer blue
+    Finance: "#9966cc",     // Softer purple
+    Scripting: "#669966",   // Softer green
+    Technology: "#cc9966",  // Softer gold
+    default: "#cc8866"      // Softer orange
+  }
+  
+  const colorMap = isDarkTheme ? darkThemeColors : lightThemeColors
+  const color = colorMap[skill.category as keyof typeof colorMap] || colorMap.default
 
   return (
     <group position={position}>
       <mesh ref={meshRef}>
         <sphereGeometry args={[0.3, 16, 16]} />
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.2} transparent opacity={0.8} />
+        <meshStandardMaterial 
+          color={color} 
+          emissive={color} 
+          emissiveIntensity={isDarkTheme ? 0.2 : 0.1} // Reduce intensity in light mode
+          transparent 
+          opacity={isDarkTheme ? 0.8 : 0.7} // Slightly more transparent in light mode
+        />
       </mesh>
       <group ref={textRef}>
         <Text
@@ -59,7 +75,7 @@ function SkillNode({ skill, position, index }: { skill: Skill; position: [number
         <Text
           position={[0, -0.9, 0]}
           fontSize={0.15}
-          color="#ffffff"
+          color={isDarkTheme ? "#ffffff" : "#333333"}
           anchorX="center"
           anchorY="middle"
         >
@@ -70,7 +86,11 @@ function SkillNode({ skill, position, index }: { skill: Skill; position: [number
   )
 }
 
-function SkillsSphereScene({ skills }: SkillsSphereProps) {
+interface SkillsSphereSceneProps extends SkillsSphereProps {
+  isDarkTheme: boolean
+}
+
+function SkillsSphereScene({ skills, isDarkTheme }: SkillsSphereSceneProps) {
   const groupRef = useRef<THREE.Group>(null)
 
   useFrame(() => {
@@ -91,15 +111,15 @@ function SkillsSphereScene({ skills }: SkillsSphereProps) {
   return (
     <group ref={groupRef}>
       {skills.map((skill, index) => (
-        <SkillNode key={skill.name} skill={skill} position={positions[index]} index={index} />
+        <SkillNode key={skill.name} skill={skill} position={positions[index]} index={index} isDarkTheme={isDarkTheme} />
       ))}
 
       {/* Central core */}
       <mesh>
         <sphereGeometry args={[0.5, 32, 32]} />
         <meshStandardMaterial
-          color="#ffffff"
-          emissive="#ffffff"
+          color={isDarkTheme ? "#ffffff" : "#333333"}
+          emissive={isDarkTheme ? "#ffffff" : "#333333"}
           emissiveIntensity={0.1}
           transparent
           opacity={0.1}
@@ -111,12 +131,23 @@ function SkillsSphereScene({ skills }: SkillsSphereProps) {
 }
 
 export default function SkillsSphere({ skills }: SkillsSphereProps) {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  
+  // Set mounted state once component mounts
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) return <div className="w-full h-full"></div>
+  
   return (
     <div className="w-full h-full">
       <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        <SkillsSphereScene skills={skills} />
+        <ambientLight intensity={theme === 'dark' ? 0.5 : 0.4} /> {/* Slightly dimmer in light mode */}
+        <pointLight position={[10, 10, 10]} intensity={theme === 'dark' ? 1 : 0.8} /> {/* Slightly dimmer in light mode */}
+        <SkillsSphereScene skills={skills} isDarkTheme={theme === 'dark'} />
         <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
       </Canvas>
     </div>

@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { useTheme } from "next-themes"
 
 interface Particle {
   x: number
@@ -13,11 +14,20 @@ interface Particle {
 }
 
 export default function ParticleBackground() {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const particlesRef = useRef<Particle[]>([])
   const animationRef = useRef<number>()
+  
+  // Set mounted state once component mounts
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
+    if (!mounted) return
+    
     const canvas = canvasRef.current
     if (!canvas) return
 
@@ -32,6 +42,11 @@ export default function ParticleBackground() {
     const createParticles = () => {
       const particles: Particle[] = []
       const particleCount = Math.floor((canvas.width * canvas.height) / 20000) // Reduced particle count for better performance
+      
+      // Define colors based on theme
+      const darkThemeColors = ["#00ffff", "#ff00ff", "#4287f5"]
+      const lightThemeColors = ["#6699cc", "#9966cc", "#6699ff"] // Softer, less bright colors for light mode
+      const colors = theme === 'dark' ? darkThemeColors : lightThemeColors
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
@@ -41,7 +56,7 @@ export default function ParticleBackground() {
           vy: (Math.random() - 0.5) * 0.5,
           size: Math.random() * 2 + 1,
           opacity: Math.random() * 0.5 + 0.2,
-          color: Math.random() > 0.5 ? "#00ffff" : "#ff00ff",
+          color: colors[Math.floor(Math.random() * colors.length)],
         })
       }
 
@@ -49,8 +64,8 @@ export default function ParticleBackground() {
     }
 
     const animate = () => {
-      // Create a subtle trail effect
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Semi-transparent black
+      // Create a subtle trail effect based on theme
+      ctx.fillStyle = theme === 'dark' ? "rgba(0, 0, 0, 0.05)" : "rgba(245, 245, 245, 0.2)"; // More visible trail in light mode
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.globalCompositeOperation = "lighter"; // Blend particles for a glowing effect
@@ -70,9 +85,12 @@ export default function ParticleBackground() {
 
         // Draw particle
         ctx.save()
-        ctx.globalAlpha = particle.opacity * (0.8 + 0.2 * Math.sin(time + index))
+        // Reduce opacity in light mode for eye comfort
+        const opacityMultiplier = theme === 'dark' ? 1.0 : 0.7
+        ctx.globalAlpha = particle.opacity * (0.8 + 0.2 * Math.sin(time + index)) * opacityMultiplier
         ctx.fillStyle = particle.color
-        ctx.shadowBlur = 10 // Slightly reduced shadow blur for performance
+        // Reduce shadow blur in light mode
+        ctx.shadowBlur = theme === 'dark' ? 10 : 5 
         ctx.shadowColor = particle.color
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size * (0.8 + 0.2 * Math.sin(time + index)), 0, Math.PI * 2)
@@ -120,7 +138,7 @@ export default function ParticleBackground() {
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [])
+  }, [mounted, theme]) // Recreate particles when theme changes
 
   return (
     <canvas

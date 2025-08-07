@@ -34,14 +34,21 @@ const projects = [
     tech: "Python, NLP",
     color: "from-green-400 to-emerald-500",
   },
-  {
+ /* {
     title: "MovieRec AI",
     description:
       "An AI-powered recommendation system that suggests movies and TV shows based on user preferences and viewing history.",
     tech: "Python, Machine Learning",
     color: "from-orange-400 to-red-500",
+  }, */
+  {
+    title: "DietMaxx",
+    description:
+      "An AI-powered recommendation system that suggests best diet for you based on your day to day life, ensuring that you get all nutrients.",
+    tech: "TypeScript, AI/ML",
+    color: "from-orange-400 to-red-500",
   },
-]
+] 
 
 const skills = [
   { name: "Python", level: 95, category: "Programming" },

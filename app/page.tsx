@@ -12,7 +12,7 @@ import SkillsSphere from "@/components/skills-sphere"
 import HologramCard from "@/components/hologram-card"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 
-const projects = [
+export const projects = [
   {
     title: "AxinTweak",
     description:
@@ -34,21 +34,30 @@ const projects = [
     tech: "Python, NLP",
     color: "from-green-400 to-emerald-500",
   },
- /* {
+  {
+    title: "Codevert",
+    description:
+      "An AI code conversion tool that can transform code between programming languages (e.g., Python to C++, JavaScript to TypeScript).",
+    tech: "Python, AI/ML",
+    color: "from-yellow-400 to-amber-500",
+    viewCode: "https://github.com/Shaikh-Warsi/CodeVert/tree/main",
+    launchDemo: "https://codevert.vercel.app",
+  },
+  {
+    title: "Dietmaxx",
+    description: "An app for finding the best diet based on your day-to-day life.",
+    tech: "React Native, AI",
+    color: "from-green-500 to-lime-600",
+    link: "#",
+  },
+  {
     title: "MovieRec AI",
     description:
       "An AI-powered recommendation system that suggests movies and TV shows based on user preferences and viewing history.",
     tech: "Python, Machine Learning",
     color: "from-orange-400 to-red-500",
-  }, */
-  {
-    title: "DietMaxx",
-    description:
-      "An AI-powered recommendation system that suggests best diet for you based on your day to day life, ensuring that you get all nutrients.",
-    tech: "TypeScript, AI/ML",
-    color: "from-orange-400 to-red-500",
   },
-] 
+]
 
 const skills = [
   { name: "Python", level: 95, category: "Programming" },
@@ -147,7 +156,7 @@ export default function Portfolio() {
                 {["home", "projects", "skills", "about", "contact"].map((section) => (
                   <button
                     key={section}
-                    onClick={() => scrollToSection(section)}
+                    onClick={() => section === 'projects-page' ? window.location.href = '/projects' : scrollToSection(section)}
                     className={`px-4 py-2 rounded-lg border border-cyan-500/30 backdrop-blur-sm transition-all duration-300 ${
                       activeSection === section
                         ? "bg-cyan-500/20 text-cyan-400 shadow-lg shadow-cyan-500/25"
@@ -263,9 +272,17 @@ export default function Portfolio() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.map((project, index) => (
+              {projects.slice(0, 4).map((project, index) => (
                 <HologramCard key={index} project={project} index={index} />
               ))}
+            </div>
+            <div className="flex justify-center mt-12">
+              <Button
+                onClick={() => window.location.href = '/projects'}
+                className="px-8 py-3 rounded-lg border border-cyan-500/30 backdrop-blur-sm transition-all duration-300 hover:bg-cyan-500/10 hover:text-cyan-400"
+              >
+                VIEW MORE PROJECTS
+              </Button>
             </div>
           </div>
         </section>

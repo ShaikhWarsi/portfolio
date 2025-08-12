@@ -11,6 +11,8 @@ interface Project {
   description: string
   tech: string
   color: string
+  viewCode?: string
+  launchDemo?: string
 }
 
 interface HologramCardProps {
@@ -129,15 +131,23 @@ export default function HologramCard({ project, index }: HologramCardProps) {
                 </div>
 
                 <div className="mt-4 flex gap-2">
-                  <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
-                  >
-                    Launch Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="border-cyan-500/30 text-cyan-400 bg-transparent">
-                    View Code
-                  </Button>
+                  {project.launchDemo && (
+                    <a href={project.launchDemo} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        size="sm"
+                        className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
+                      >
+                        Launch Demo
+                      </Button>
+                    </a>
+                  )}
+                  {project.viewCode && (
+                    <a href={project.viewCode} target="_blank" rel="noopener noreferrer">
+                      <Button size="sm" variant="outline" className="border-cyan-500/30 text-cyan-400 bg-transparent">
+                        View Code
+                      </Button>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

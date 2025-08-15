@@ -19,6 +19,8 @@ export const projects = [
       "A Windows performance-boosting tool written in batch scripting to optimize system performance and enhance user experience.",
     tech: "Batch Programming",
     color: "from-cyan-400 to-blue-500",
+    launchDemo: "https://github.com/Shaikh-Warsi/AxinTweak",
+    viewCode: "https://github.com/Shaikh-Warsi/AxinTweak",
   },
   {
     title: "Exam AI",
@@ -26,6 +28,8 @@ export const projects = [
       "An AI assistant designed to help students prepare for exams at the last minute with personalized study plans and quick reviews.",
     tech: "Python, AI/ML",
     color: "from-purple-400 to-pink-500",
+    viewCode: "https://github.com/Shaikh-Warsi/JarvisAI",
+    launchDemo: "#",
   },
   {
     title: "AI Assist",
@@ -33,6 +37,8 @@ export const projects = [
       "A comprehensive personal AI assistant that can write content, code in any language, open applications, search files, and send emails.",
     tech: "Python, NLP",
     color: "from-green-400 to-emerald-500",
+    launchDemo: "https://github.com/Shaikh-Warsi/JarvisAI",
+    viewCode: "#",
   },
   {
     title: "Codevert",
@@ -48,7 +54,8 @@ export const projects = [
     description: "An app for finding the best diet based on your day-to-day life.",
     tech: "React Native, AI",
     color: "from-green-500 to-lime-600",
-    link: "#",
+    launchDemo: "https://dietmaxx.vercel.app",
+    viewCode: "#",
   },
   {
     title: "MovieRec AI",
@@ -56,6 +63,8 @@ export const projects = [
       "An AI-powered recommendation system that suggests movies and TV shows based on user preferences and viewing history.",
     tech: "Python, Machine Learning",
     color: "from-orange-400 to-red-500",
+    viewCode: "#",
+    launchDemo: "#",
   },
 ]
 
@@ -271,8 +280,8 @@ export default function Portfolio() {
               PROJECT ARCHIVE
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.slice(0, 4).map((project, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.filter(project => project.title !== "Exam AI" && project.title !== "MovieRec AI").map((project, index) => (
                 <HologramCard key={index} project={project} index={index} />
               ))}
             </div>

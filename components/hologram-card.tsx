@@ -28,7 +28,7 @@ export default function HologramCard({ project, index }: HologramCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+      viewport={{ once: true, margin: "0px", amount: 0.5 }}
       transition={{ delay: index * 0.15, duration: 0.6, ease: "easeOut" }}
       className="relative group"
       onMouseEnter={() => setIsHovered(true)}
@@ -68,7 +68,11 @@ export default function HologramCard({ project, index }: HologramCardProps) {
                 {project.title}
               </h3>
               <motion.div animate={{ rotate: isHovered ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                <Play className="h-5 w-5 text-cyan-400" />
+                {project.launchDemo && (
+                  <a href={project.launchDemo} target="_blank" rel="noopener noreferrer">
+                    <Play className="h-5 w-5 text-cyan-400" />
+                  </a>
+                )}
               </motion.div>
             </div>
 
@@ -91,13 +95,17 @@ export default function HologramCard({ project, index }: HologramCardProps) {
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="text-purple-400 hover:bg-purple-500/10 border border-purple-500/30"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </Button>
+                  {project.launchDemo && (
+                    <a href={project.launchDemo} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="text-purple-400 hover:bg-purple-500/10 border border-purple-500/30"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    </a>
+                  )}
                 </motion.div>
               </div>
             </div>
@@ -131,16 +139,6 @@ export default function HologramCard({ project, index }: HologramCardProps) {
                 </div>
 
                 <div className="mt-4 flex gap-2">
-                  {project.launchDemo && (
-                    <a href={project.launchDemo} target="_blank" rel="noopener noreferrer">
-                      <Button
-                        size="sm"
-                        className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700"
-                      >
-                        Launch Demo
-                      </Button>
-                    </a>
-                  )}
                   {project.viewCode && (
                     <a href={project.viewCode} target="_blank" rel="noopener noreferrer">
                       <Button size="sm" variant="outline" className="border-cyan-500/30 text-cyan-400 bg-transparent">

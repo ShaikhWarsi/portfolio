@@ -19,8 +19,8 @@ export const projects = [
       "A Windows performance-boosting tool written in batch scripting to optimize system performance and enhance user experience.",
     tech: "Batch Programming",
     color: "from-cyan-400 to-blue-500",
-    launchDemo: "https://github.com/Shaikh-Warsi/AxinTweak",
-    viewCode: "https://github.com/Shaikh-Warsi/AxinTweak",
+    launchDemo: "https://github.com/ShaikhWarsi/AxinTweak",
+    viewCode: "https://github.com/ShaikhWarsi/AxinTweak",
   },
   {
     title: "Exam AI",
@@ -28,7 +28,7 @@ export const projects = [
       "An AI assistant designed to help students prepare for exams at the last minute with personalized study plans and quick reviews.",
     tech: "Python, AI/ML",
     color: "from-purple-400 to-pink-500",
-    viewCode: "https://github.com/Shaikh-Warsi/JarvisAI",
+    viewCode: "https://github.com/ShaikhWarsi/JarvisAI",
     launchDemo: "#",
   },
   {
@@ -37,7 +37,7 @@ export const projects = [
       "A comprehensive personal AI assistant that can write content, code in any language, open applications, search files, and send emails.",
     tech: "Python, NLP",
     color: "from-green-400 to-emerald-500",
-    launchDemo: "https://github.com/Shaikh-Warsi/JarvisAI",
+    launchDemo: "https://github.com/ShaikhWarsi/JarvisAI",
     viewCode: "#",
   },
   {
@@ -46,7 +46,7 @@ export const projects = [
       "An AI code conversion tool that can transform code between programming languages (e.g., Python to C++, JavaScript to TypeScript).",
     tech: "Python, AI/ML",
     color: "from-yellow-400 to-amber-500",
-    viewCode: "https://github.com/Shaikh-Warsi/CodeVert/tree/main",
+    viewCode: "https://github.com/ShaikhWarsi/CodeVert/tree/main",
     launchDemo: "https://codevert.vercel.app",
   },
   {
@@ -386,7 +386,7 @@ export default function Portfolio() {
                 <h3 className="text-2xl font-bold text-purple-400 mb-6 relative z-10"></h3>
 
                 <div className="flex justify-center space-x-4 w-full mx-auto">
-                  {[{"icon":Github,"label":"GitHub","href":"https://github.com/Shaikh-Warsi"},
+                  {[{"icon":Github,"label":"GitHub","href":"https://github.com/ShaikhWarsi"},
                     {"icon":Linkedin,"label":"LinkedIn","href":"https://www.linkedin.com/in/shaikh-mohammad-warsi-141532271/"},
                     {"icon":Mail,"label":"Email","href":"mailto:yollotemp@gmail.com"},
                     {"icon":Instagram,"label":"Instagram","href":"https://www.instagram.com/shaikh_warsi7/"},

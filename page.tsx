@@ -10,6 +10,7 @@ import ParticleBackground from "@/components/particle-background"
 import SkillsSphere from "@/components/skills-sphere"
 import HologramCard from "@/components/hologram-card"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
+import { Analytics } from "@vercel/analytics/next"
 
 const projects = [
   {

@@ -27,7 +27,7 @@ export default function ProjectsPage() {
         </div>
         <div className="flex justify-center mt-12">
           <Button
-            onClick={() => window.history.back()}
+            onClick={() => window.location.href = '/'}
             className="px-8 py-3 rounded-lg border border-cyan-500/30 backdrop-blur-sm transition-all duration-300 hover:bg-cyan-500/10 hover:text-cyan-400"
           >
             GO BACK

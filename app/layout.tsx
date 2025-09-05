@@ -5,8 +5,8 @@ import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
   title: 'portfolio',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  description: 'portfolio',
+generator: 'portfolio',
 }
 
 export default function RootLayout({

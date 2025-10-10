@@ -38,7 +38,7 @@ export const projects = [
     tech: "Python, NLP",
     color: "from-green-400 to-emerald-500",
     launchDemo: "https://github.com/ShaikhWarsi/JarvisAI",
-    viewCode: "#",
+    viewCode: "https://github.com/ShaikhWarsi/JarvisAI",
   },
   {
     title: "Codevert",
@@ -63,8 +63,16 @@ export const projects = [
       "An AI-powered recommendation system that suggests movies and TV shows based on user preferences and viewing history.",
     tech: "Python, Machine Learning",
     color: "from-orange-400 to-red-500",
-    viewCode: "#",
-    launchDemo: "#",
+    
+  },
+  {
+    title: "CROPIX",
+    description:
+      "An AI-driven program with 6 ML models to help farmers increase their productivity and efficiency.",
+    tech: "Python, AI/ML, FastAPI, Next.js",
+    color: "from-green-400 to-lime-500",
+    launchDemo: "https://cropixbitlyfe.vercel.app",
+    viewCode: "https://github.com/ShaikhWarsi/CROPIX",
   },
 ]
 
@@ -113,16 +121,16 @@ export default function Portfolio() {
         newHistory.push("Available commands: about, projects, skills, contact, clear")
         break
       case "about":
-        newHistory.push("back end dev")
+        scrollToSection("about")
         break
       case "projects":
-        newHistory.push("AxinTweak | Exam AI | AI Assist | MovieRec AI")
+        window.location.href = '/projects'
         break
       case "skills":
-        newHistory.push("Python | Crypto Analysis | Batch Programming | AI/ML")
+        scrollToSection("skills")
         break
       case "contact":
-        newHistory.push("Establishing secure communication channel...")
+        scrollToSection("contact")
         break
       case "clear":
         setTerminalHistory(["> Terminal cleared"])

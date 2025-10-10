@@ -65,6 +65,15 @@ export const projects = [
     color: "from-orange-400 to-red-500",
     
   },
+  {
+    title: "CROPIX",
+    description:
+      "An AI-driven program with 6 ML models to help farmers increase their productivity and efficiency.",
+    tech: "Python, AI/ML, FastAPI, Next.js",
+    color: "from-green-400 to-lime-500",
+    launchDemo: "https://cropixbitlyfe.vercel.app",
+    viewCode: "https://github.com/ShaikhWarsi/CROPIX",
+  },
 ]
 
 const skills = [

@@ -350,6 +350,10 @@ export default function Portfolio() {
                 </p>
 
                 <p className="text-gray-300">
+                  My current CGPA is <span className="text-green-400">8.2</span> and I have made over <span className="text-blue-400">1000+</span> contributions on GitHub.
+                </p>
+
+                <p className="text-gray-300">
                   With expertise in <span className="text-green-400">Python development</span>,
                   <span className="text-orange-400"> cryptocurrency analysis</span>, and
                   <span className="text-blue-400"> batch programming</span>, I create solutions that push the boundaries

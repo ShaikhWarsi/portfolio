@@ -10,6 +10,7 @@ import { Github, Linkedin, Mail, Instagram, Terminal, Sun, Moon } from "lucide-r
 import ParticleBackground from "@/components/particle-background"
 import SkillsSphere from "@/components/skills-sphere"
 import HologramCard from "@/components/hologram-card"
+import AboutMeCard from "@/components/about-me-card"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 
 export const projects = [
@@ -79,7 +80,7 @@ const skills = [
 ]
 
 export default function Portfolio() {
-  const activeSection = useScrollSpy(["home", "projects", "skills", "about", "contact"], 200)
+  const activeSection = useScrollSpy(["home", "projects", "skills", "about-me", "contact"], 200)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [terminalOpen, setTerminalOpen] = useState(false)
@@ -101,7 +102,7 @@ export default function Portfolio() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-  
+
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
     setMounted(true)
@@ -164,7 +165,7 @@ export default function Portfolio() {
 
             <div className="flex items-center gap-6">
               <div className="hidden md:flex gap-6">
-                {["home", "projects", "skills", "about", "contact"].map((section) => (
+                {["home", "projects", "skills", "about-me", "contact"].map((section) => (
                   <button
                     key={section}
                     onClick={() => section === 'projects-page' ? window.location.href = '/projects' : scrollToSection(section)}
@@ -333,50 +334,10 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-20 px-6">
+        {/* About Me Section */}
+        <section id="about-me" className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-green-400 relative z-10">
-              SYSTEM PROFILE
-            </h2>
-
-            <div className="bg-black/40 border border-green-500/30 rounded-lg p-8 backdrop-blur-sm">
-              <div className="text-lg leading-relaxed space-y-4">
-                <p className="text-gray-300">
-                  Welcome to my website. I am a Back End developer specializing in
-                  <span className="text-cyan-400"> artificial intelligence</span> and
-                  <span className="text-purple-400"> system optimization</span>. My mission is to bridge the gap between
-                  human creativity and machine efficiency.
-                </p>
-
-                <p className="text-gray-300">
-                  My current CGPA is <span className="text-green-400">8.2</span> and I have made over <span className="text-blue-400">1000+</span> contributions on GitHub.
-                </p>
-
-                <p className="text-gray-300">
-                  With expertise in <span className="text-green-400">Python development</span>,
-                  <span className="text-orange-400"> cryptocurrency analysis</span>, and
-                  <span className="text-blue-400"> batch programming</span>, I create solutions that push the boundaries
-                  of what's possible in the digital realm.
-                </p>
-
-                <p className="text-gray-300">
-                  When I'm not coding the future, you'll find me analyzing market patterns, optimizing system performance,
-                  or exploring the latest advancements in AI technology. My goal is to create tools that enhance human
-                  potential and streamline digital experiences.
-                </p>
-              </div>
-
-              <div
-                className="mt-8 p-4 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-lg border border-cyan-500/20"
-              >
-                <p className="text-cyan-400 font-semibold mb-2">Current Mission:</p>
-                <p className="text-gray-300">
-                  Developing next-generation AI assistants and performance optimization tools to revolutionize how humans
-                  interact with technology.
-                </p>
-              </div>
-            </div>
+            <AboutMeCard cgpa={8.2} year="second" githubAuthor="ShaikhWarsi" />
           </div>
         </section>
 

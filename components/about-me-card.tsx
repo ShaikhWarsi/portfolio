@@ -83,28 +83,35 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ cgpa, year, githubAuthor }) =
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          I am from <span className="text-orange-400 font-semibold">Indore</span>.
+          Hailing from <span className="text-orange-400 font-semibold">Indore</span>, I bring a strong foundation in software development.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          My current CGPA is <span className="text-green-400 font-semibold"><AnimatedNumber from={0} to={cgpa} duration={0.8} fixed={1} /></span>.
+          I currently maintain a CGPA of <span className="text-green-400 font-semibold"><AnimatedNumber from={0} to={cgpa} duration={0.8} fixed={1} /></span>.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          I am in my <span className="text-blue-400 font-semibold">{year}</span> year of study at <span className="text-blue-400 font-semibold">VIT Bhopal</span>.
+          I am currently pursuing my <span className="text-blue-400 font-semibold">{year}</span> year of studies.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
+        >
+          I am currently pursuing a B.Tech degree in Computer Science with a specialization in Artificial Intelligence and Machine Learning at <span className="text-blue-400 font-semibold">VIT Bhopal</span>.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 1.0 }}
         >
-          I have made over <span className="text-purple-400 font-semibold"><AnimatedNumber from={0} to={githubCommits} duration={1} />+</span> commits on GitHub.
+          My commitment to development is reflected in over <span className="text-purple-400 font-semibold"><AnimatedNumber from={0} to={githubCommits} duration={1} />+</span> commits on GitHub.
         </motion.p>
       </div>
     </motion.div>

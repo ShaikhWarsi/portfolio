@@ -73,7 +73,7 @@ export const projects = [
 
 const skills = [
   { name: "Python", level: 95, category: "Programming" },
-  { name: "Crypto Analysis", level: 85, category: "Finance" },
+  { name: "Software Engineering", level: 85, category: "Development" },
   { name: "Batch Programming", level: 90, category: "Scripting" },
   { name: "AI/ML", level: 80, category: "Technology" },
   { name: "Data Analysis", level: 75, category: "Analytics" },
@@ -252,7 +252,7 @@ export default function Portfolio() {
               <p
                 className="text-xl md:text-2xl text-gray-300 mb-8"
               >
-                Back End DEV • AI Specialist • Crypto Analyst
+                Back End DEV • AI Specialist • Software Engineer
               </p>
             </div>
 

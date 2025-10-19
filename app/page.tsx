@@ -22,15 +22,7 @@ export const projects = [
     launchDemo: "https://github.com/ShaikhWarsi/AxinTweak",
     viewCode: "https://github.com/ShaikhWarsi/AxinTweak",
   },
-  {
-    title: "Exam AI",
-    description:
-      "An AI assistant designed to help students prepare for exams at the last minute with personalized study plans and quick reviews.",
-    tech: "Python, AI/ML",
-    color: "from-purple-400 to-pink-500",
-    viewCode: "https://github.com/ShaikhWarsi/JarvisAI",
-    launchDemo: "#",
-  },
+
   {
     title: "AI Assist",
     description:
@@ -57,14 +49,7 @@ export const projects = [
     launchDemo: "https://dietmaxx.vercel.app",
     viewCode: "#",
   },
-  {
-    title: "MovieRec AI",
-    description:
-      "An AI-powered recommendation system that suggests movies and TV shows based on user preferences and viewing history.",
-    tech: "Python, Machine Learning",
-    color: "from-orange-400 to-red-500",
-    
-  },
+
   {
     title: "CROPIX",
     description:

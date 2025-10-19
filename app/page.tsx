@@ -63,7 +63,7 @@ export const projects = [
   {
     title: "HumanEval",
     description:
-      "An advanced cognitive assessment platform featuring neural-based testing protocols and comprehensive brain performance analytics, designed to test and improve various cognitive skills through interactive games and challenges.",
+      "An AI platform for cognitive assessment. It uses neural-based tests and games to measure and improve various brain skills.",
     tech: "Web Development, Cognitive Science, UI/UX",
     color: "from-blue-400 to-purple-500",
     launchDemo: "https://humaneval.vercel.app/",

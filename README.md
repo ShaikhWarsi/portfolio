@@ -2,7 +2,7 @@
 
 ## 👋 Welcome to My Digital Space
 
-Hello! I'm Shaikh Warsi, a passionate Back End Developer, AI Specialist, and Software Engineer. My mission is to bridge the gap between human creativity and machine efficiency by crafting innovative solutions that push the boundaries of what's possible in the digital realm.
+Hello! I'm Shaikh Mohammad Warsi, a passionate Fullstack Developer, AI Specialist, and Software Engineer. My mission is to bridge the gap between human creativity and machine efficiency by crafting innovative solutions that push the boundaries of what's possible in the digital realm.
 
 With expertise in Python development, cryptocurrency analysis, and batch programming, I create tools that enhance human potential and streamline digital experiences. When I'm not coding the future, you'll find me analyzing market patterns, optimizing system performance, or exploring the latest advancements in AI technology.
 

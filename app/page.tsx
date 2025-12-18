@@ -36,7 +36,7 @@ export const projects = [
   {
     title: "Codevert",
     description:
-      "An AI code conversion tool that can transform code between programming languages (e.g., Python to C++, JavaScript to TypeScript).",
+      "An AI code conversion tool that can transform code between programming languages (e.g., Python to C++, C++ to Java).",
     tech: "Python, AI/ML",
     color: "from-yellow-400 to-amber-500",
     viewCode: "https://github.com/ShaikhWarsi/CodeVert/tree/main",

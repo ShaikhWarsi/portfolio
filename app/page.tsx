@@ -92,8 +92,8 @@ export const projects = [
 
 const skills = [
   { name: "Python", level: 95, category: "Programming" },
-  { name: "Software Engineering", level: 85, category: "Development" },
-  { name: "Batch Programming", level: 90, category: "Scripting" },
+  { name: "Software Development", level: 85, category: "Development" },
+  { name: "Web development", level: 90, category: "Scripting" },
   { name: "AI/ML", level: 80, category: "Technology" },
   { name: "Data Analysis", level: 75, category: "Analytics" },
 ]
@@ -356,7 +356,7 @@ export default function Portfolio() {
         {/* About Me Section */}
         <section id="about-me" className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
-            <AboutMeCard cgpa={8.2} year="second" githubAuthor="ShaikhWarsi" />
+            <AboutMeCard cgpa={8.4} year="second" githubAuthor="ShaikhWarsi" />
           </div>
         </section>
 

@@ -356,7 +356,7 @@ export default function Portfolio() {
                   {[{"icon":Github,"label":"GitHub","href":"https://github.com/ShaikhWarsi"},
                     {"icon":Linkedin,"label":"LinkedIn","href":"https://www.linkedin.com/in/shaikh-mohammad-warsi-141532271/"},
                     {"icon":Mail,"label":"Email","href":"mailto:yollotemp@gmail.com"},
-                    {"icon":Instagram,"label":"Instagram","href":"https://www.instagram.com/shaikh_warsi7/"},
+                    {"icon":Instagram,"label":"Instagram","href":"https://www.instagram.com/yamin_shaikh21/"},
                   ].map((social, index) => (
                     <a
                       key={social.label}

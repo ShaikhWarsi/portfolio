@@ -75,8 +75,8 @@ export const projects = [
       "A platform for hackathon enthusiasts to discover, track, and participate in hackathons worldwide.",
     tech: "Web Development, API Integration",
     color: "from-purple-400 to-pink-500",
-    launchDemo: "#",
-    viewCode: "#",
+    launchDemo: "https://hackathonhunt.vercel.app/",
+    viewCode: "https://github.com/ShaikhWarsi/HackathonHunt",
   },
   {
     title: "FractureNet",
@@ -84,8 +84,8 @@ export const projects = [
       "A machine learning website where AI can automatically detect fractures and fracture types and highlight them on a picture.",
     tech: "Python, AI/ML, Computer Vision",
     color: "from-red-400 to-orange-500",
-    launchDemo: "#",
-    viewCode: "#",
+    launchDemo: "https://fracturenet.vercel.app",
+    viewCode: "https://github.com/ShaikhWarsi/FractureNet",
   },
 
 ]

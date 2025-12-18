@@ -135,7 +135,7 @@ export default function Portfolio() {
         newHistory.push("Available commands: about, projects, skills, contact, clear")
         break
       case "about":
-        scrollToSection("about")
+        scrollToSection("about-me")
         break
       case "projects":
         window.location.href = '/projects'

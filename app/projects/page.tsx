@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import HologramCard from "@/components/hologram-card"
 import { projects } from "@/app/page"
+import ParticleBackground from "@/components/particle-background"
 
 export default function ProjectsPage() {
   const [mounted, setMounted] = useState(false)
@@ -16,6 +17,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden py-20 px-6">
+      <ParticleBackground />
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-cyan-400 relative z-10">
           ALL PROJECTS

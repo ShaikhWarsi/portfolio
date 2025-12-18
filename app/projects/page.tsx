@@ -4,7 +4,9 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import HologramCard from "@/components/hologram-card"
 import { projects } from "@/app/page"
-import ParticleBackground from "@/components/particle-background"
+import dynamic from 'next/dynamic'
+
+const ParticleBackground = dynamic(() => import("@/components/particle-background"), { ssr: false })
 
 export default function ProjectsPage() {
   const [mounted, setMounted] = useState(false)

@@ -1,34 +1,77 @@
-# 👋 Hi, I'm Shaikh Mohammad Warsi
+# Shaikh Warsi - Portfolio
 
-🎓 A student, developer, trader, and content creator  
-📍 Based in India | Building things that matter  
-💡 Passionate about:  
-- 🧠 AI and automation  
-- 📈 Stock & crypto trading  
-- 📱 Coding apps that solve real problems
+## 👋 Welcome to My Digital Space
 
----
+Hello! I'm Shaikh Mohammad Warsi, a passionate Fullstack Developer, AI Specialist, and Software Engineer. My mission is to bridge the gap between human creativity and machine efficiency by crafting innovative solutions that push the boundaries of what's possible in the digital realm.
 
-## 🚀 Projects & Work
-- 🔗 [My Portfolio Website](https://shaikhwarsi.vercel.app)
-- 💹 Trading Bots using Python & AI
-- 🧠 "ExamAi" – AI-powered study assistant using Gemini API
-- 📦 "NotifAi" – Smart reminder app with 24/7 tray notifications
+With expertise in Python development, cryptocurrency analysis, and batch programming, I create tools that enhance human potential and streamline digital experiences. When I'm not coding the future, you'll find me analyzing market patterns, optimizing system performance, or exploring the latest advancements in AI technology.
 
----
+## 🚀 Projects Showcase
 
-## 📚 Currently Learning:
-- Advanced Python & full-stack dev
-- Machine learning for pattern detection in trading
-- AI integration in all real world use cases
+Here's a selection of projects that demonstrate my skills and passion:
 
----
+### AxinTweak
+*   **Description:** A Windows performance-boosting tool written in batch scripting to optimize system performance and enhance user experience.
+*   **Technology:** Batch Programming
+*   **Demo:** [View Demo](https://github.com/ShaikhWarsi/AxinTweak)
+*   **Code:** [View Code](https://github.com/ShaikhWarsi/AxinTweak)
+
+### AI Assist
+*   **Description:** A comprehensive personal AI assistant that can write content, code in any language, open applications, search files, and send emails.
+*   **Technology:** Python, NLP
+*   **Demo:** [View Demo](https://github.com/ShaikhWarsi/JarvisAI)
+*   **Code:** [View Code](https://github.com/ShaikhWarsi/JarvisAI)
+
+### Codevert
+*   **Description:** An AI code conversion tool that can transform code between programming languages (e.g., Python to C++, JavaScript to TypeScript).
+*   **Technology:** Python, AI/ML
+*   **Demo:** [View Demo](https://codevert.vercel.app)
+*   **Code:** [View Code](https://github.com/ShaikhWarsi/CodeVert/tree/main)
+
+### Dietmaxx
+*   **Description:** An app for finding the best diet based on your day-to-day life.
+*   **Technology:** React Native, AI
+*   **Demo:** [View Demo](https://dietmaxx.vercel.app)
+*   **Code:** (Private/Not Available)
+
+### CROPIX
+*   **Description:** An AI-driven program with 6 ML models to help farmers increase their productivity and efficiency.
+*   **Technology:** Python, AI/ML, FastAPI, Next.js
+*   **Demo:** [View Demo](https://cropixbitlyfe.vercel.app)
+*   **Code:** [View Code](https://github.com/ShaikhWarsi/CROPIX)
+
+### HumanEval
+*   **Description:** An AI platform for cognitive assessment. It uses neural-based tests and games to measure and improve various brain skills.
+*   **Technology:** Web Development, Cognitive Science, UI/UX
+*   **Demo:** [View Demo](https://humaneval.vercel.app/)
+*   **Code:** [View Code](https://github.com/ShaikhWarsi/HumanEval)
+
+For a complete list of my projects, please visit the [Projects Page](https://shaikhwarsi.vercel.app/projects) on my website.
+
+
+## 🛠️ Technologies Used
+
+This portfolio website is built with modern web technologies:
+
+*   **Framework:** Next.js
+*   **Library:** React
+*   **Language:** TypeScript
+*   **Styling:** Tailwind CSS
+*   **Animations:** Framer Motion
+*   **Icons:** Lucide React
+
 
 ## 📫 Let's Connect
-- 🔗 [LinkedIn](https://linkedin.com/in/shaikhwarsi)
-- 🐦 [Instagram](https://instagram.com/shaikh_warsi7)
-- 📬 axeeddis@gmail.com
 
----
-> "Build quietly. Execute loudly."
+I'm always open to new opportunities and collaborations. Feel free to reach out!
+
+*   **GitHub:** [ShaikhWarsi](https://github.com/ShaikhWarsi)
+*   **LinkedIn:** [Shaikh Mohammad Warsi](https://www.linkedin.com/in/shaikh-mohammad-warsi-141532271/)
+*   **Email:** [yollotemp@gmail.com](mailto:yollotemp@gmail.com)
+*   **Instagram:** [yamin_shaikh21](https://www.instagram.com/yamin_shaikh21/)
+
+## 🎓 Education
+
+© Vit 2028 • Btech in CSE with specialization in AI/ML
+
 

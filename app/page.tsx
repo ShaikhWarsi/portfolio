@@ -69,6 +69,25 @@ export const projects = [
     launchDemo: "https://humaneval.vercel.app/",
     viewCode: "https://github.com/ShaikhWarsi/HumanEval",
   },
+  {
+    title: "HackathonHunt",
+    description:
+      "A platform for hackathon enthusiasts to discover, track, and participate in hackathons worldwide.",
+    tech: "Web Development, API Integration",
+    color: "from-purple-400 to-pink-500",
+    launchDemo: "#",
+    viewCode: "#",
+  },
+  {
+    title: "FractureNet",
+    description:
+      "A machine learning website where AI can automatically detect fractures and fracture types and highlight them on a picture.",
+    tech: "Python, AI/ML, Computer Vision",
+    color: "from-red-400 to-orange-500",
+    launchDemo: "#",
+    viewCode: "#",
+  },
+
 ]
 
 const skills = [
@@ -284,9 +303,9 @@ export default function Portfolio() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {projects.filter(project => project.title !== "Exam AI" && project.title !== "MovieRec AI").map((project, index) => (
-                <HologramCard key={index} project={project} index={index} />
-              ))}
+              {projects.filter(project => project.title !== "Exam AI" && project.title !== "MovieRec AI" && project.title !== "HackathonHunt" && project.title !== "FractureNet").map((project, index) => (
+            <HologramCard key={index} project={project} index={index} />
+          ))}
             </div>
             <div className="flex justify-center mt-12">
               <Button

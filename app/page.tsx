@@ -271,7 +271,7 @@ export default function Portfolio() {
               <p
                 className="text-xl md:text-2xl text-gray-300 mb-8"
               >
-                Back End DEV • AI Specialist • Software Engineer
+                Fullstack DEV • AI Specialist • Software Developer
               </p>
             </div>
 

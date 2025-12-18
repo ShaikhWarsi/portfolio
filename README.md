@@ -74,5 +74,4 @@ I'm always open to new opportunities and collaborations. Feel free to reach out!
 
 © Vit 2028 • Btech in CSE with specialization in AI/ML
 
----
-> "Build quietly. Execute loudly."
+

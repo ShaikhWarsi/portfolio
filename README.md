@@ -1,4 +1,7 @@
-# Shaikh Warsi - Portfolio
+# portfolio
+
+Welcome to my digital space! I'm Shaikh Mohammad Warsi, a passionate Fullstack Developer, AI Specialist, and Software Engineer dedicated to bridging human creativity with machine efficiency through innovative digital solutions.
+
 
 ## 👋 Welcome to My Digital Space
 

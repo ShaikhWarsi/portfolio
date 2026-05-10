@@ -373,9 +373,7 @@ export default function Portfolio() {
 
                 <div className="flex justify-center space-x-4 w-full mx-auto">
                   {[{"icon":Github,"label":"GitHub","href":"https://github.com/ShaikhWarsi"},
-                    {"icon":Linkedin,"label":"LinkedIn","href":"https://www.linkedin.com/in/shaikh-mohammad-warsi-141532271/"},
-                    {"icon":Mail,"label":"Email","href":"mailto:yollotemp@gmail.com"},
-                    {"icon":Instagram,"label":"Instagram","href":"https://www.instagram.com/yamin_shaikh21/"},
+                    {"icon":Mail,"label":"Email","href":"mailto:axeeddis@gmail.com"}
                   ].map((social, index) => (
                     <a
                       key={social.label}

@@ -83,7 +83,7 @@ const AboutMeCard: React.FC<AboutMeCardProps> = ({ cgpa, year, githubAuthor }) =
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          Hailing from <span className="text-orange-400 font-semibold">Indore</span>, I bring a strong foundation in software development.
+          Hailing from <span className="text-orange-400 font-semibold">Madhya pradesh</span>, I bring a strong foundation in software development.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, x: -20 }}
